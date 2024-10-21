@@ -51,7 +51,7 @@ int main() {
     char letra2;
     letra2 = 'b';
 
-    string nome = "Lucas"; // string é uma classe e é sequencias de char (const char[6])
+    string nome = "Lucas"; // string é uma classe e é uma sequencias de char (const char[6])
     string sobrenome;
     sobrenome = "santos";
 
@@ -62,7 +62,7 @@ int main() {
     return 0;
 
 }
-/*int é uma função ,,main é a função principal a chaveta serve para criar um bloco de código e pertence sempre há função nesse caso há função main
+/*int(inteiro) é uma função ,,main é a função principal a chaveta serve para criar um bloco de código e pertence sempre há função nesse caso há função main
 o que tem antes dos parenteses é uma função sempre e o que tiver dentro dos parenteses também
 
 uma função é um nome que damos a um bloco de codigo especifico */
