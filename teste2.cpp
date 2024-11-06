@@ -32,6 +32,7 @@ m= 10;
 
 
     //operadores lógicos:
+    // +=      a = a + n;
     // ==     igual (compara)
     // !=     diferente (ponto de exclamação (!) é a diferença)
     // >      maior
