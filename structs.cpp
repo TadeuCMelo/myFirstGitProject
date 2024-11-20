@@ -17,5 +17,5 @@ int main() {
     cout << "Turma: " << xtp5676.turma << endl;
 
 
-    return 0;
+  return 0;
 }

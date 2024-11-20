@@ -12,7 +12,7 @@ int main() {
     float valor;
 
     cout << "indique o valor do raio:";
-    cin >> valor; //cin vai dar um output ou input
+    cin >> valor; //cin vai dar um input
 
     cout << X * PI * 5 << endl;
 
