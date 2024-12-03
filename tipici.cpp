@@ -9,7 +9,7 @@ int main() {
     srand(time(0));
     char letra_certa = letras[rand() % 26], chute;
 
-    cout << "Adivinhe a letra (a-z)! Você tem 4 tentativas." << endl;
+    cout << "Adivinha a letra (a-z)! Tens 4 tentativas." << endl;
     for (int i = 0; i < 4; ++i) {
         cout << "Tentativa " << i + 1 << ": ";
         cin >> chute;
@@ -23,16 +23,16 @@ int main() {
         }
 
         if (!valido) {
-            cout << "Letra inválida! Tente novamente." << endl;
+            cout << "É UMA LETRA MINÚSCULA! Tenta novamente." << endl;
             --i;  
         } else if (chute == letra_certa) { 
-            cout << "Parabéns! Você acertou!" << endl;
+            cout << "acertaste gostoso!" << endl;
             return 0;  
         } else { 
             cout << "A letra é " << (chute < letra_certa ? "mais alta" : "mais baixa") << "." << endl;
         }
     }
 
-    cout << "Você perdeu! A letra era '" << letra_certa << "'." << endl;
+    cout << "Perdeste! A letra era '" << letra_certa << "'." << endl;
     return 0;
 }
