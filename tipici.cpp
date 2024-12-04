@@ -68,7 +68,7 @@ void bingo(){
 *Cada cartão de bingo terá 5 linhas e 5 colunas.
 *preenchidos com números aleatórios de 1 a 75.
 *
-* Serão gerados tantos cartões quando o utilizador indicar.
+* Serão gerados tantos cartões quantos o utilizador indicar.
 *(O utilizador poderá passar os cartões para um papel)
 *
 *2ª Parte
@@ -76,12 +76,19 @@ void bingo(){
 *Ganha o jogador que completar o cartão de bingo primeiro.
 *
 *Regras do bingo:
-*Não poderá havern +umeros repetidos no cartão
+*Não poderá haver numeros repetidos no cartão
 *O cartão de bingo terá 5 linhas e 5 colunas.
 *O cartão de vingo terá números de 1 a 75.
 *Não podem ser sorteados números repetidos.
 */
-
+int pedidos;
+cout << "Quantos cartões deseja gerar: ";
+cin >> pedidos;
+srand(time(0));
+for(int i = 0; i<5; i++){
+    cout << rand() % 75 << "\n";
+    continue;
+}
 
 
 }
@@ -104,7 +111,30 @@ cout << nome[x];
 
 }
 
+void sorteadodica(){
+
+    struct numeros{
+        int numero;
+        bool sorteado;
+    };
+    numeros painel[75];
+
+    srand(time(0));
+
+    for (int i = 0; i <= 5 ; i++){
+        painel[i].numero = i;
+        painel[i].sorteado = false;
+        if(painel[i-1].sorteado == false)
+            cout << "o numero sorteado foi" << i << endl;
+    }else if{
+        
+    }
+
+
+}
+
+
     int main() {
-        codigo();
+        sorteadodica();
         return 0;
     }
