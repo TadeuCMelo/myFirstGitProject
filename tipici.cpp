@@ -217,3 +217,43 @@ sleep(2);
 }
 return 0;
     }
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Jogo {
+    string oculto;
+};
+
+int main() {
+    Jogo jogo;
+    string frase;
+    cout << "Frase: ";
+    cin >> frase;
+    
+    for (char l : frase) {
+        jogo.oculto += (l == ' ') ? ' ' : '-';
+    }
+    
+    while (jogo.oculto != frase) {
+        cout << jogo.oculto << endl;
+        cout << "Escreve uma letra: ";
+        char letra;
+        cin >> letra;
+        int i = 0;
+        
+        for (char l : frase) {
+            if (l == letra) {
+                jogo.oculto[i] = letra;
+            }
+            i++;
+        }
+    }
+    
+    cout << "Acertaste a frase era: " << frase << endl;
+    return 0;
+}
