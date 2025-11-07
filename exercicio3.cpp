@@ -1,20 +1,84 @@
-/*
-*um programa que pede 2 números ao utilizador
-*e apresenta no terminal a soma dos dois números.
-*/
 #include <iostream>
-
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-int main(){
+const int TAM = 31;
 
-int num1, num2;
+struct Player {
+    string nome;
+    int pos;
+};
 
-cout << "Introduza um número: ";
-cin >> num1;
-cout << "introduza o segundo número: ";
-cin >> num2;
-cout << "a soma é: "<< num1 + num2<< endl;
+Player jogadores[3] = {
+    {"António", 1},
+    {"Rebeca", 1},
+    {"Joaquim", 1}
+};
 
-return 0;
+
+void tabela(Player jogadores[], int numJogadores) {
+    for (int i = 1; i < TAM; i++) {
+        bool casaOcupada = false;
+
+        cout << "[";
+        if (i < 10) cout << " "; // espaço para alinhar com números de 2 dígitos
+        cout << i << "] ";
+
+        for (int j = 0; j < numJogadores; j++) {
+            if (jogadores[j].pos == i) {
+                cout << jogadores[j].nome[0]; // primeira letra do nome
+                casaOcupada = true;
+            }
+        }
+
+        if (!casaOcupada) cout << "_";
+        cout << "  ";
+
+
+        if ((i + 1) % 10 == 0) cout << endl;
+    }
+   
+}
+
+
+bool moverJogador(Player &p) {
+
+    cout << "\nToca Enter pa jogares (" << p.nome << "): ";
+    cin.get();
+
+    int dado = rand() % 6 + 1;
+    p.pos += dado;
+
+    if (p.pos > 30) p.pos = 30;
+
+    cout << p.nome << " moveu " << dado << " casas -> posição " << p.pos << endl;
+
+
+    return p.pos == 30;
+}
+
+int main() {
+    srand(time(0)); 
+
+    bool jogoAtivo = true;
+    int numJogadores = 3;
+
+    system("clear");
+    tabela(jogadores, numJogadores);
+
+    while (jogoAtivo) {
+        for (int i = 0; i < numJogadores && jogoAtivo; i++) {
+            bool venceu = moverJogador(jogadores[i]);
+            system("clear");
+            tabela(jogadores, numJogadores);
+
+            if (venceu) {
+                cout << jogadores[i].nome << " venceste o jogo!\n";
+                jogoAtivo = false;
+            }
+        }
+    }
+
+    return 0;
 }
